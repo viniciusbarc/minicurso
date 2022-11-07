@@ -13,12 +13,7 @@ from ta.trend import MACD
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello_world():
-    return "<p>App funcionando. Use /nomedoativo para consultar as cotações.</p>"
-
-
-@app.route("/<ativo>")
+@app.route("/ativo/<ativo>")
 def obtercotacoes(ativo):
     # Definição de datas para captura via yfinance
     datafinal = date.today()
